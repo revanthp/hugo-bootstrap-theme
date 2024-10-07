@@ -3,8 +3,7 @@
     Facebook Page Admin ID for Domain Insights
     https://developers.facebook.com/docs/plugins/comments/#moderation-setup-instructions
 -->
-*/}}
-{{ $facebook_admin := or site.Params.facebook_admin .Site.Social.facebook_admin }}
-{{- with $facebook_admin }}
-    <meta property="fb:admins" content="{{ . }}">
+*/}} {{ $facebook_admin := or site.Params.facebook_admin
+.Site.Params.facebook_admin }} {{- with $facebook_admin }}
+<meta property="fb:admins" content="{{ . }}" />
 {{ end }}
